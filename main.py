@@ -22,4 +22,8 @@ for index, row in df.iterrows():
     for i in range(31):
         pdf.cell(w=9, h=11, txt="v", align="C", ln=0, border=1)
 
+    for i in range(row["Pages"]):
+        pdf.add_page()
+        pdf.line(9, 21, 290, 21)
+
 pdf.output("output.pdf")
